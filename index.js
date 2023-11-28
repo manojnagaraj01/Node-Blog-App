@@ -5,9 +5,12 @@ const app = express()
 const dotenv = require("dotenv")
 dotenv.config(); 
 const PORT = process.env.PORT
-// const cors = require("cors") 
+const cors = require("cors") 
 app.use(express.json())
 
+app.use(cors({
+    origin:"*" 
+}))
 
 app.use("/blogrouter", blogRouter)
 
