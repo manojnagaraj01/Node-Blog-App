@@ -71,10 +71,23 @@ route.get("/getblogdata/latest", (req, res) => {
     const latest = blogdata.filter(item => item.cat === "Latest");
     return res.send(latest);
 });
+// stories
+route.get("/getblogdata/stories", (req, res) => {
+    const stories = blogdata.filter(item => item.cat === "Stories");
+    return res.send(stories);
+});
 //post
 route.get("/getblogdata/post", (req, res) => {
     const post = blogdata.filter(item => item.cat === "Post");
     return res.send(post);
+});
+route.get("/getblogdata/imageleft", (req, res) => {
+    const imageleft = blogdata.filter(item => item.cat === "image left");
+    return res.send(imageleft);
+});
+route.get("/getblogdata/imageright", (req, res) => {
+    const imageright = blogdata.filter(item => item.cat === "image right");
+    return res.send(imageright);
 });
 
 route.get("/getsingleblogdata/:ids", (req,res)=>{
